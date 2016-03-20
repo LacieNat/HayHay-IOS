@@ -8,10 +8,19 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, UITextFieldDelegate {
+    //MARK: Properties
+
+    @IBOutlet weak var topLogo: UIBarButtonItem!
+    
+    //MARK: Actions
+
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        topLogo.image?.imageWithRenderingMode(.AlwaysOriginal)
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -19,6 +28,8 @@ class FirstViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: UITextFieldDelegate
 
 
 }
