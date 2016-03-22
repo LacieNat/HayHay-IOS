@@ -15,6 +15,8 @@
 		4751152E1C9BA41D004C8AC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4751152C1C9BA41D004C8AC4 /* LaunchScreen.storyboard */; };
 		475115391C9BA41D004C8AC4 /* HayHayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475115381C9BA41D004C8AC4 /* HayHayTests.swift */; };
 		475115441C9BA41D004C8AC4 /* HayHayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475115431C9BA41D004C8AC4 /* HayHayUITests.swift */; };
+		4751158C1C9F9AB0004C8AC4 /* ThreadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4751158B1C9F9AB0004C8AC4 /* ThreadTableViewCell.swift */; };
+		4751158E1CA17C1D004C8AC4 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4751158D1CA17C1D004C8AC4 /* Thread.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		4751153F1C9BA41D004C8AC4 /* HayHayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HayHayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		475115431C9BA41D004C8AC4 /* HayHayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HayHayUITests.swift; sourceTree = "<group>"; };
 		475115451C9BA41D004C8AC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4751158B1C9F9AB0004C8AC4 /* ThreadTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadTableViewCell.swift; sourceTree = "<group>"; };
+		4751158D1CA17C1D004C8AC4 /* Thread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 			children = (
 				475115211C9BA41D004C8AC4 /* AppDelegate.swift */,
 				475115231C9BA41D004C8AC4 /* FirstViewController.swift */,
+				4751158B1C9F9AB0004C8AC4 /* ThreadTableViewCell.swift */,
+				4751158D1CA17C1D004C8AC4 /* Thread.swift */,
 				475115251C9BA41D004C8AC4 /* SecondViewController.swift */,
 				475115271C9BA41D004C8AC4 /* Main.storyboard */,
 				4751152A1C9BA41D004C8AC4 /* Assets.xcassets */,
@@ -260,8 +266,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				475115261C9BA41D004C8AC4 /* SecondViewController.swift in Sources */,
+				4751158E1CA17C1D004C8AC4 /* Thread.swift in Sources */,
 				475115221C9BA41D004C8AC4 /* AppDelegate.swift in Sources */,
 				475115241C9BA41D004C8AC4 /* FirstViewController.swift in Sources */,
+				4751158C1C9F9AB0004C8AC4 /* ThreadTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

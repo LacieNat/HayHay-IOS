@@ -77,9 +77,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Uc-EE-hAb">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Uc-EE-hAb">
                                 <rect key="frame" x="0.0" y="72" width="600" height="484"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="90" selectionStyle="none" indentationWidth="10" reuseIdentifier="ThreadTableViewCell" rowHeight="90" id="j4p-sj-HNR" customClass="ThreadTableViewCell" customModule="HayHay" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="90" tableViewCell="j4p-sj-HNR" id="Xdd-gu-QDG">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="f8J-pP-kwD">
+                                                    <rect key="frame" x="16" y="8" width="50" height="50"/>
+                                                </imageView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="474" placeholderIntrinsicHeight="60" text="Wish I could write more. But the words are just not floating today." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9Lq-bd-Ucl">
+                                                    <rect key="frame" x="74" y="0.0" width="206" height="90"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="33" placeholderIntrinsicHeight="16" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1h-ND-YAk">
+                                                    <rect key="frame" x="284" y="0.0" width="33" height="16"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="2 min">
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.54559264520202022" green="0.54559264520202022" blue="0.54559264520202022" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <font key="NSFont" size="13" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="content" destination="9Lq-bd-Ucl" id="C37-7E-DEE"/>
+                                            <outlet property="time" destination="q1h-ND-YAk" id="ONV-Gv-xTc"/>
+                                            <outlet property="topicIcon" destination="f8J-pP-kwD" id="N1I-3R-BTg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
                             </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NvP-mg-Dr8">
                                 <rect key="frame" x="-2" y="28" width="605" height="44"/>
@@ -88,7 +129,7 @@
                                         <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="SD3-Uf-2WW"/>
-                                    <barButtonItem image="topbar" width="100" id="DP8-CZ-9xl">
+                                    <barButtonItem image="3A172DBF-6967-4B74-951F-618CDC7D49E6" width="100" id="DP8-CZ-9xl">
                                         <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="jyl-e1-Ux8"/>
@@ -122,7 +163,117 @@
         </scene>
     </scenes>
     <resources>
+        <image name="3A172DBF-6967-4B74-951F-618CDC7D49E6" width="65" height="14">
+            <mutableData key="keyedArchiveRepresentation">
+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
+AAHsdWtVQQAAACoAAAISZnJGVQAAACgAAAI8emhUVwAAABYAAAJkaXRJVAAAACgAAAJ6bmJOTwAAACYA
+AAKia29LUgAAABYAAALIY3NDWgAAACIAAALeaGVJTAAAAB4AAAMAZGVERQAAACwAAAMeaHVIVQAAACgA
+AANKc3ZTRQAAACYAAAKiemhDTgAAABYAAANyamFKUAAAABoAAAOIcm9STwAAACQAAAOiZWxHUgAAACIA
+AAPGcHRQTwAAACYAAAPobmxOTAAAACgAAAQOZXNFUwAAACYAAAPodGhUSAAAACQAAAQ2dHJUUgAAACIA
+AARaZmlGSQAAACgAAAR8cGxQTAAAACwAAASkcnVSVQAAACIAAATQYXJFRwAAACYAAATyZW5VUwAAACYA
+AAUYZGFESwAAAC4AAAU+AFYBYQBlAG8AYgBlAGMAbgD9ACAAUgBHAEIAIABwAHIAbwBmAGkAbABHAGUA
+bgBlAHIAaQENAGsAaQAgAFIARwBCACAAcAByAG8AZgBpAGwAUABlAHIAZgBpAGwAIABSAEcAQgAgAGcA
+ZQBuAOgAcgBpAGMAUABlAHIAZgBpAGwAIABSAEcAQgAgAEcAZQBuAOkAcgBpAGMAbwQXBDAEMwQwBDsE
+TAQ9BDgEOQAgBD8EQAQ+BEQEMAQ5BDsAIABSAEcAQgBQAHIAbwBmAGkAbAAgAGcA6QBuAOkAcgBpAHEA
+dQBlACAAUgBWAEKQGnUoACAAUgBHAEIAIIJyX2ljz4/wAFAAcgBvAGYAaQBsAG8AIABSAEcAQgAgAGcA
+ZQBuAGUAcgBpAGMAbwBHAGUAbgBlAHIAaQBzAGsAIABSAEcAQgAtAHAAcgBvAGYAaQBsx3y8GAAgAFIA
+RwBCACDVBLhc0wzHfABPAGIAZQBjAG4A/QAgAFIARwBCACAAcAByAG8AZgBpAGwF5AXoBdUF5AXZBdwA
+IABSAEcAQgAgBdsF3AXcBdkAQQBsAGwAZwBlAG0AZQBpAG4AZQBzACAAUgBHAEIALQBQAHIAbwBmAGkA
+bADBAGwAdABhAGwA4QBuAG8AcwAgAFIARwBCACAAcAByAG8AZgBpAGxmbpAaACAAUgBHAEIAIGPPj/Bl
+h072TgCCLAAgAFIARwBCACAw1zDtMNUwoTCkMOsAUAByAG8AZgBpAGwAIABSAEcAQgAgAGcAZQBuAGUA
+cgBpAGMDkwO1A70DuQO6A8wAIAPAA8EDvwPGA68DuwAgAFIARwBCAFAAZQByAGYAaQBsACAAUgBHAEIA
+IABnAGUAbgDpAHIAaQBjAG8AQQBsAGcAZQBtAGUAZQBuACAAUgBHAEIALQBwAHIAbwBmAGkAZQBsDkIO
+Gw4jDkQOHw4lDkwAIABSAEcAQgAgDhcOMQ5IDicORA4bAEcAZQBuAGUAbAAgAFIARwBCACAAUAByAG8A
+ZgBpAGwAaQBZAGwAZQBpAG4AZQBuACAAUgBHAEIALQBwAHIAbwBmAGkAaQBsAGkAVQBuAGkAdwBlAHIA
+cwBhAGwAbgB5ACAAcAByAG8AZgBpAGwAIABSAEcAQgQeBDEESQQ4BDkAIAQ/BEAEPgREBDgEOwRMACAA
+UgBHAEIGRQZEBkEAIAYqBjkGMQZKBkEAIABSAEcAQgAgBicGRAY5BicGRQBHAGUAbgBlAHIAaQBjACAA
+UgBHAEIAIABQAHIAbwBmAGkAbABlAEcAZQBuAGUAcgBlAGwAIABSAEcAQgAtAGIAZQBzAGsAcgBpAHYA
+ZQBsAHMAZXRleHQAAAAAQ29weXJpZ2h0IDIwMDcgQXBwbGUgSW5jLiwgYWxsIHJpZ2h0cyByZXNlcnZl
+ZC4AWFlaIAAAAAAAAPNSAAEAAAABFs9YWVogAAAAAAAAdE0AAD3uAAAD0FhZWiAAAAAAAABadQAArHMA
+ABc0WFlaIAAAAAAAACgaAAAVnwAAuDZjdXJ2AAAAAAAAAAEBzQAAc2YzMgAAAAAAAQxCAAAF3v//8yYA
+AAeSAAD9kf//+6L///2jAAAD3AAAwGzSJSYnKFokY2xhc3NuYW1lWCRjbGFzc2VzXxAQTlNCaXRtYXBJ
+bWFnZVJlcKMpKitfEBBOU0JpdG1hcEltYWdlUmVwWk5TSW1hZ2VSZXBYTlNPYmplY3TSJSYtLldOU0Fy
+cmF5oi0r0iUmMDFeTlNNdXRhYmxlQXJyYXmjMC0r0zM0CjU2N1dOU1doaXRlXE5TQ29sb3JTcGFjZUQw
+IDAAEAOADNIlJjk6V05TQ29sb3KiOSvSJSY8PVdOU0ltYWdlojwrXxAPTlNLZXllZEFyY2hpdmVy0UBB
+VHJvb3SAAQAIABEAGgAjAC0AMgA3AEYATABXAF4AZQByAHkAgQCDAIUAigCMAI4AlwCcAKcAqQCrAK0A
+sgC1ALcAuQC7AL0AwgDZANsA3ReHF4wXlxegF7MXtxfKF9UX3hfjF+sX7hfzGAIYBhgNGBUYIhgnGCkY
+KxgwGDgYOxhAGEgYSxhdGGAYZQAAAAAAAAIBAAAAAAAAAEIAAAAAAAAAAAAAAAAAABhnA
+</mutableData>
+        </image>
         <image name="second" width="30" height="30"/>
-        <image name="topbar" width="65" height="14"/>
     </resources>
 </document>
