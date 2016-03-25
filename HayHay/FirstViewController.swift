@@ -36,7 +36,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func loadSampleThreads() {
         let thread1 = Thread(content:"Wish I could write more. But the words are just floating away. I need to write this longer. I am running out of creativity hihihihihihihihihihihihihihihihihihi", time: "2min", topic: nil)
         
-        let thread2 = Thread(content:"Testingtesting", time: "2min", topic: nil)
+        let thread2 = Thread(content:"Testingtesting a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a", time: "2min", topic: nil)
         
         threads.append(thread1!)
         threads.append(thread2!)

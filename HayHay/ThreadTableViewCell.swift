@@ -10,7 +10,8 @@ import UIKit
 
 class ThreadTableViewCell: UITableViewCell {
     //MARK: Properties
-    @IBOutlet weak var content: UITextView!
+    
+    @IBOutlet weak var content: UILabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var topicIcon: UIImageView!
     
