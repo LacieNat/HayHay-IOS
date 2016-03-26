@@ -55,6 +55,7 @@
 		4751158B1C9F9AB0004C8AC4 /* ThreadTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadTableViewCell.swift; sourceTree = "<group>"; };
 		4751158D1CA17C1D004C8AC4 /* Thread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
 		4751158F1CA565CD004C8AC4 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		475115911CA66745004C8AC4 /* HayHay-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HayHay-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +116,7 @@
 				4751152A1C9BA41D004C8AC4 /* Assets.xcassets */,
 				4751152C1C9BA41D004C8AC4 /* LaunchScreen.storyboard */,
 				4751152F1C9BA41D004C8AC4 /* Info.plist */,
+				475115911CA66745004C8AC4 /* HayHay-Bridging-Header.h */,
 			);
 			path = HayHay;
 			sourceTree = "<group>";
@@ -417,6 +419,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lacie.HayHay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HayHay-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -428,6 +431,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lacie.HayHay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HayHay-Bridging-Header.h";
 			};
 			name = Release;
 		};
