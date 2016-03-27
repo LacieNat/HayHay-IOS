@@ -37,7 +37,51 @@ class LoginController: UIViewController {
         
         //else process post request
         else {
-            var post:NSString = "email=\(email)&"
+            let nonce = ""
+            let datahash = (un as String) + (pw as String)
+            let hash = ((nonce as String) + datahash.sha1()).sha1()
+            
+            var params = ["email":un as String, "hhash": hash as String, "nonce": nonce as String] as Dictionary<String, String>
+            var request = NSMutableURLRequest(URL: NSURL(string: "https://52.34.244.168:8000/user/login")!)
+            var session = NSURLSession.sharedSession()
+            
+            request.HTTPMethod = "POST"
+            //request.HTTPBody = try? NSJSONSerialization.dataWithJSONObject(params, options: [])
+            request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+            request.setValue("application/json", forHTTPHeaderField: "Accept")
+            request.setBodyContent(params)
+            
+
+            var task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+                print("Response: \(response)")
+                
+                if(error != nil) {
+                    print(error!.localizedDescription)
+                    let jsonStr = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                    print("Error could not parse JSON: '\(jsonStr)'")
+                    return
+                }
+                
+                var json = try? NSJSONSerialization.JSONObjectWithData(data!, options: .MutableLeaves) as? NSDictionary
+                // Did the JSONObjectWithData constructor return an error? If so, log the error to the console
+                if(json != nil) {
+                    // The JSONObjectWithData constructor didn't return an error. But, we should still
+                    // check and make sure that json has a value using optional binding.
+                    if let parseJSON = json {
+                        // Okay, the parsedJSON is here, let's get the value for 'success' out of it
+                        var success = parseJSON!["success"] as? Int
+                        print("Succes: \(success)")
+                    }
+                    else {
+                        // Woa, okay the json object was nil, something went worng. Maybe the server isn't running?
+                        let jsonStr = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                        print("Error could not parse JSON: \(jsonStr)")
+                    }
+                }
+            })
+            
+            task.resume();
+            
         }
     }
 
@@ -59,10 +103,27 @@ extension String {
         let data = self.dataUsingEncoding(NSUTF8StringEncoding)!
         var digest = [UInt8](count:Int(CC_SHA1_DIGEST_LENGTH), repeatedValue: 0)
         CC_SHA1(data.bytes, CC_LONG(data.length), &digest)
-        let output = NSMutableString(capacity: Int(CC_SHA1_DIGEST_LENGTH))
-        for byte in digest {
-            output.appendFormat("%02x", byte)
+        let hexBytes = digest.map { String(format: "%02hhx", $0) }
+        return hexBytes.joinWithSeparator("")
+    }
+}
+
+extension NSMutableURLRequest {
+    func setBodyContent(contentMap: Dictionary<String, String>) {
+        var firstOneAdded = false
+        var contentBodyAsString = String()
+        let contentKeys:Array<String> = Array(contentMap.keys)
+        for contentKey in contentKeys {
+            if(!firstOneAdded) {
+                
+                contentBodyAsString = contentBodyAsString + contentKey + "=" + contentMap[contentKey]!
+                firstOneAdded = true
+            }
+            else {
+                contentBodyAsString = contentBodyAsString + "&" + contentKey + "=" + contentMap[contentKey]!
+            }
         }
-        return output as String
+        contentBodyAsString = contentBodyAsString.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+        self.HTTPBody = contentBodyAsString.dataUsingEncoding(NSUTF8StringEncoding)
     }
 }
