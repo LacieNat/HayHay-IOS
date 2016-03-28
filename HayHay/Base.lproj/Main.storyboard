@@ -6,10 +6,50 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Second-->
+        <!--Map-->
+        <scene sceneID="lNC-se-qRD">
+            <objects>
+                <viewController id="cQl-B4-ruB" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dgP-Ka-rOV"/>
+                        <viewControllerLayoutGuide type="bottom" id="gJ8-ha-uXp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jSG-uR-GJu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Map" image="Map" id="a36-9y-gVW"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JTm-yj-Jsb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-63" y="810"/>
+        </scene>
+        <!--Notifications-->
+        <scene sceneID="AyE-CZ-7Cc">
+            <objects>
+                <viewController id="qTl-kP-svU" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="53F-My-xap"/>
+                        <viewControllerLayoutGuide type="bottom" id="r0D-GD-5di"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZtK-rD-WJ4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Notifications" image="Notification" selectedImage="Filter" id="GMb-lE-Xjn"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eO3-1J-eCV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="579" y="832"/>
+        </scene>
+        <!--Filter-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="HayHay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" userLabel="Filter" customClass="SecondViewController" customModule="HayHay" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -18,33 +58,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="195" y="279" width="209.5" height="41.5"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tYv-JA-Siz">
+                                <rect key="frame" x="-2" y="20" width="605" height="44"/>
+                                <items>
+                                    <barButtonItem title="Item" id="KeH-W6-M8d">
+                                        <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="H1N-CN-6nc"/>
+                                    <barButtonItem image="55847B29-55D2-4134-AFDE-1B2BF29F0351" width="100" id="djL-bj-P6h">
+                                        <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="D9Y-z3-L9d"/>
+                                    <barButtonItem systemItem="compose" id="XNN-yI-dJb">
+                                        <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uh7-Uq-ew1">
+                                <rect key="frame" x="-2" y="64" width="602" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="192" y="329" width="215.5" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FilterTableViewCell" id="eq2-uh-5Ym" customClass="FilterTableViewCell" customModule="HayHay" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="602" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eq2-uh-5Ym" id="TRo-na-whL">
+                                            <rect key="frame" x="0.0" y="0.0" width="602" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstItem="tYv-JA-Siz" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="Vi9-l0-HYY"/>
+                            <constraint firstItem="tYv-JA-Siz" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="bL4-re-heo"/>
+                            <constraint firstItem="tYv-JA-Siz" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="-22" id="d7Y-I9-OmQ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="FIlter" image="Filter" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="679" y="688"/>
+            <point key="canvasLocation" x="723" y="124"/>
         </scene>
         <!--Login Controller-->
         <scene sceneID="r7w-ZW-b1y">
@@ -165,16 +221,18 @@
                     <connections>
                         <segue destination="eMV-eD-fVH" kind="relationship" relationship="viewControllers" id="08G-FD-cRB"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="qTl-kP-svU" kind="relationship" relationship="viewControllers" id="up8-2P-Ksd"/>
+                        <segue destination="cQl-B4-ruB" kind="relationship" relationship="viewControllers" id="CM7-w2-8Jm"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-116" y="-254"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="I6n-X8-ZSR">
             <objects>
-                <viewController id="eMV-eD-fVH" customClass="FirstViewController" customModule="HayHay" sceneMemberID="viewController">
+                <viewController id="eMV-eD-fVH" userLabel="Home" customClass="FirstViewController" customModule="HayHay" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="C1Z-mn-3Tr"/>
                         <viewControllerLayoutGuide type="bottom" id="J6f-B0-79t"/>
@@ -183,7 +241,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Uc-EE-hAb">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Uc-EE-hAb">
                                 <rect key="frame" x="0.0" y="72" width="600" height="484"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -249,7 +307,7 @@
                                         <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="SD3-Uf-2WW"/>
-                                    <barButtonItem image="DFBC5BF9-E1B5-47A2-8666-5745ED06BE01" width="100" id="DP8-CZ-9xl">
+                                    <barButtonItem image="78D4CB4A-D929-48FD-9F09-4762C7218EB7" width="100" id="DP8-CZ-9xl">
                                         <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="jyl-e1-Ux8"/>
@@ -270,9 +328,9 @@
                             <constraint firstItem="4Uc-EE-hAb" firstAttribute="centerX" secondItem="NvP-mg-Dr8" secondAttribute="centerX" id="yzF-ix-fTg"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="jr6-3b-OCQ"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Home" selectedImage="Home" id="mpY-8y-mgM" userLabel="Home"/>
                     <toolbarItems/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="threadTable" destination="4Uc-EE-hAb" id="sW7-QV-ZJY"/>
                         <outlet property="topLogo" destination="DP8-CZ-9xl" id="iBP-I0-cFy"/>
@@ -284,7 +342,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="DFBC5BF9-E1B5-47A2-8666-5745ED06BE01" width="65" height="14">
+        <image name="55847B29-55D2-4134-AFDE-1B2BF29F0351" width="65" height="14">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -395,8 +453,122 @@ sgC1ALcAuQC7AL0AwgDZANsA3ReHF4wXlxegF7MXtxfKF9UX3hfjF+sX7hfzGAIYBhgNGBUYIhgnGCkY
 KxgwGDgYOxhAGEgYSxhdGGAYZQAAAAAAAAIBAAAAAAAAAEIAAAAAAAAAAAAAAAAAABhnA
 </mutableData>
         </image>
+        <image name="78D4CB4A-D929-48FD-9F09-4762C7218EB7" width="65" height="14">
+            <mutableData key="keyedArchiveRepresentation">
+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
+AAHsdWtVQQAAACoAAAISZnJGVQAAACgAAAI8emhUVwAAABYAAAJkaXRJVAAAACgAAAJ6bmJOTwAAACYA
+AAKia29LUgAAABYAAALIY3NDWgAAACIAAALeaGVJTAAAAB4AAAMAZGVERQAAACwAAAMeaHVIVQAAACgA
+AANKc3ZTRQAAACYAAAKiemhDTgAAABYAAANyamFKUAAAABoAAAOIcm9STwAAACQAAAOiZWxHUgAAACIA
+AAPGcHRQTwAAACYAAAPobmxOTAAAACgAAAQOZXNFUwAAACYAAAPodGhUSAAAACQAAAQ2dHJUUgAAACIA
+AARaZmlGSQAAACgAAAR8cGxQTAAAACwAAASkcnVSVQAAACIAAATQYXJFRwAAACYAAATyZW5VUwAAACYA
+AAUYZGFESwAAAC4AAAU+AFYBYQBlAG8AYgBlAGMAbgD9ACAAUgBHAEIAIABwAHIAbwBmAGkAbABHAGUA
+bgBlAHIAaQENAGsAaQAgAFIARwBCACAAcAByAG8AZgBpAGwAUABlAHIAZgBpAGwAIABSAEcAQgAgAGcA
+ZQBuAOgAcgBpAGMAUABlAHIAZgBpAGwAIABSAEcAQgAgAEcAZQBuAOkAcgBpAGMAbwQXBDAEMwQwBDsE
+TAQ9BDgEOQAgBD8EQAQ+BEQEMAQ5BDsAIABSAEcAQgBQAHIAbwBmAGkAbAAgAGcA6QBuAOkAcgBpAHEA
+dQBlACAAUgBWAEKQGnUoACAAUgBHAEIAIIJyX2ljz4/wAFAAcgBvAGYAaQBsAG8AIABSAEcAQgAgAGcA
+ZQBuAGUAcgBpAGMAbwBHAGUAbgBlAHIAaQBzAGsAIABSAEcAQgAtAHAAcgBvAGYAaQBsx3y8GAAgAFIA
+RwBCACDVBLhc0wzHfABPAGIAZQBjAG4A/QAgAFIARwBCACAAcAByAG8AZgBpAGwF5AXoBdUF5AXZBdwA
+IABSAEcAQgAgBdsF3AXcBdkAQQBsAGwAZwBlAG0AZQBpAG4AZQBzACAAUgBHAEIALQBQAHIAbwBmAGkA
+bADBAGwAdABhAGwA4QBuAG8AcwAgAFIARwBCACAAcAByAG8AZgBpAGxmbpAaACAAUgBHAEIAIGPPj/Bl
+h072TgCCLAAgAFIARwBCACAw1zDtMNUwoTCkMOsAUAByAG8AZgBpAGwAIABSAEcAQgAgAGcAZQBuAGUA
+cgBpAGMDkwO1A70DuQO6A8wAIAPAA8EDvwPGA68DuwAgAFIARwBCAFAAZQByAGYAaQBsACAAUgBHAEIA
+IABnAGUAbgDpAHIAaQBjAG8AQQBsAGcAZQBtAGUAZQBuACAAUgBHAEIALQBwAHIAbwBmAGkAZQBsDkIO
+Gw4jDkQOHw4lDkwAIABSAEcAQgAgDhcOMQ5IDicORA4bAEcAZQBuAGUAbAAgAFIARwBCACAAUAByAG8A
+ZgBpAGwAaQBZAGwAZQBpAG4AZQBuACAAUgBHAEIALQBwAHIAbwBmAGkAaQBsAGkAVQBuAGkAdwBlAHIA
+cwBhAGwAbgB5ACAAcAByAG8AZgBpAGwAIABSAEcAQgQeBDEESQQ4BDkAIAQ/BEAEPgREBDgEOwRMACAA
+UgBHAEIGRQZEBkEAIAYqBjkGMQZKBkEAIABSAEcAQgAgBicGRAY5BicGRQBHAGUAbgBlAHIAaQBjACAA
+UgBHAEIAIABQAHIAbwBmAGkAbABlAEcAZQBuAGUAcgBlAGwAIABSAEcAQgAtAGIAZQBzAGsAcgBpAHYA
+ZQBsAHMAZXRleHQAAAAAQ29weXJpZ2h0IDIwMDcgQXBwbGUgSW5jLiwgYWxsIHJpZ2h0cyByZXNlcnZl
+ZC4AWFlaIAAAAAAAAPNSAAEAAAABFs9YWVogAAAAAAAAdE0AAD3uAAAD0FhZWiAAAAAAAABadQAArHMA
+ABc0WFlaIAAAAAAAACgaAAAVnwAAuDZjdXJ2AAAAAAAAAAEBzQAAc2YzMgAAAAAAAQxCAAAF3v//8yYA
+AAeSAAD9kf//+6L///2jAAAD3AAAwGzSJSYnKFokY2xhc3NuYW1lWCRjbGFzc2VzXxAQTlNCaXRtYXBJ
+bWFnZVJlcKMpKitfEBBOU0JpdG1hcEltYWdlUmVwWk5TSW1hZ2VSZXBYTlNPYmplY3TSJSYtLldOU0Fy
+cmF5oi0r0iUmMDFeTlNNdXRhYmxlQXJyYXmjMC0r0zM0CjU2N1dOU1doaXRlXE5TQ29sb3JTcGFjZUQw
+IDAAEAOADNIlJjk6V05TQ29sb3KiOSvSJSY8PVdOU0ltYWdlojwrXxAPTlNLZXllZEFyY2hpdmVy0UBB
+VHJvb3SAAQAIABEAGgAjAC0AMgA3AEYATABXAF4AZQByAHkAgQCDAIUAigCMAI4AlwCcAKcAqQCrAK0A
+sgC1ALcAuQC7AL0AwgDZANsA3ReHF4wXlxegF7MXtxfKF9UX3hfjF+sX7hfzGAIYBhgNGBUYIhgnGCkY
+KxgwGDgYOxhAGEgYSxhdGGAYZQAAAAAAAAIBAAAAAAAAAEIAAAAAAAAAAAAAAAAAABhnA
+</mutableData>
+        </image>
+        <image name="Filter" width="25" height="25"/>
+        <image name="Home" width="25" height="25"/>
+        <image name="Map" width="25" height="25"/>
+        <image name="Notification" width="25" height="25"/>
         <image name="logo" width="588" height="134"/>
-        <image name="second" width="30" height="30"/>
         <image name="topic_icons" width="25" height="25"/>
     </resources>
 </document>

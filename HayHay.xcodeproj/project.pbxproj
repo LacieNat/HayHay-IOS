@@ -18,6 +18,7 @@
 		4751158C1C9F9AB0004C8AC4 /* ThreadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4751158B1C9F9AB0004C8AC4 /* ThreadTableViewCell.swift */; };
 		4751158E1CA17C1D004C8AC4 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4751158D1CA17C1D004C8AC4 /* Thread.swift */; };
 		475115901CA565CD004C8AC4 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4751158F1CA565CD004C8AC4 /* LoginController.swift */; };
+		475115931CA8DB2E004C8AC4 /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475115921CA8DB2E004C8AC4 /* FilterTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		4751158D1CA17C1D004C8AC4 /* Thread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
 		4751158F1CA565CD004C8AC4 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		475115911CA66745004C8AC4 /* HayHay-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HayHay-Bridging-Header.h"; sourceTree = "<group>"; };
+		475115921CA8DB2E004C8AC4 /* FilterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				4751152C1C9BA41D004C8AC4 /* LaunchScreen.storyboard */,
 				4751152F1C9BA41D004C8AC4 /* Info.plist */,
 				475115911CA66745004C8AC4 /* HayHay-Bridging-Header.h */,
+				475115921CA8DB2E004C8AC4 /* FilterTableViewCell.swift */,
 			);
 			path = HayHay;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				4751158E1CA17C1D004C8AC4 /* Thread.swift in Sources */,
 				475115221C9BA41D004C8AC4 /* AppDelegate.swift in Sources */,
 				475115241C9BA41D004C8AC4 /* FirstViewController.swift in Sources */,
+				475115931CA8DB2E004C8AC4 /* FilterTableViewCell.swift in Sources */,
 				4751158C1C9F9AB0004C8AC4 /* ThreadTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

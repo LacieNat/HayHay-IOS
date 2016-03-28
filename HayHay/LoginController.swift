@@ -42,13 +42,13 @@ class LoginController: UIViewController {
             let hash = ((nonce as String) + datahash.sha1()).sha1()
             
             var params = ["email":un as String, "hhash": hash as String, "nonce": nonce as String] as Dictionary<String, String>
-            var request = NSMutableURLRequest(URL: NSURL(string: "https://52.34.244.168:8000/user/login")!)
+            var request = NSMutableURLRequest(URL: NSURL(string: "https://hayhaytheapp.com:443/user/login")!)
             var session = NSURLSession.sharedSession()
             
             request.HTTPMethod = "POST"
             //request.HTTPBody = try? NSJSONSerialization.dataWithJSONObject(params, options: [])
-            request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-            request.setValue("application/json", forHTTPHeaderField: "Accept")
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            //request.setValue("application/json", forHTTPHeaderField: "Accept")
             request.setBodyContent(params)
             
 
