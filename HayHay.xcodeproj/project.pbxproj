@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		474924AC1CB6857000D08C66 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474924AB1CB6857000D08C66 /* MapViewController.swift */; };
+		474924AE1CB691BA00D08C66 /* location.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 474924AD1CB691BA00D08C66 /* location.gpx */; };
+		474924B01CB6B1F300D08C66 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474924AF1CB6B1F300D08C66 /* User.swift */; };
 		475115221C9BA41D004C8AC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475115211C9BA41D004C8AC4 /* AppDelegate.swift */; };
 		475115241C9BA41D004C8AC4 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475115231C9BA41D004C8AC4 /* FirstViewController.swift */; };
 		475115261C9BA41D004C8AC4 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475115251C9BA41D004C8AC4 /* SecondViewController.swift */; };
@@ -39,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		474924AB1CB6857000D08C66 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		474924AD1CB691BA00D08C66 /* location.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = location.gpx; path = ../location.gpx; sourceTree = "<group>"; };
+		474924AF1CB6B1F300D08C66 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4751151E1C9BA41D004C8AC4 /* HayHay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HayHay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		475115211C9BA41D004C8AC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		475115231C9BA41D004C8AC4 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +94,7 @@
 		475115151C9BA41D004C8AC4 = {
 			isa = PBXGroup;
 			children = (
+				474924AD1CB691BA00D08C66 /* location.gpx */,
 				475115201C9BA41D004C8AC4 /* HayHay */,
 				475115371C9BA41D004C8AC4 /* HayHayTests */,
 				475115421C9BA41D004C8AC4 /* HayHayUITests */,
@@ -120,6 +127,8 @@
 				4751152F1C9BA41D004C8AC4 /* Info.plist */,
 				475115911CA66745004C8AC4 /* HayHay-Bridging-Header.h */,
 				475115921CA8DB2E004C8AC4 /* FilterTableViewCell.swift */,
+				474924AB1CB6857000D08C66 /* MapViewController.swift */,
+				474924AF1CB6B1F300D08C66 /* User.swift */,
 			);
 			path = HayHay;
 			sourceTree = "<group>";
@@ -248,6 +257,7 @@
 			files = (
 				4751152E1C9BA41D004C8AC4 /* LaunchScreen.storyboard in Resources */,
 				4751152B1C9BA41D004C8AC4 /* Assets.xcassets in Resources */,
+				474924AE1CB691BA00D08C66 /* location.gpx in Resources */,
 				475115291C9BA41D004C8AC4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,8 +288,10 @@
 				4751158E1CA17C1D004C8AC4 /* Thread.swift in Sources */,
 				475115221C9BA41D004C8AC4 /* AppDelegate.swift in Sources */,
 				475115241C9BA41D004C8AC4 /* FirstViewController.swift in Sources */,
+				474924B01CB6B1F300D08C66 /* User.swift in Sources */,
 				475115931CA8DB2E004C8AC4 /* FilterTableViewCell.swift in Sources */,
 				4751158C1C9F9AB0004C8AC4 /* ThreadTableViewCell.swift in Sources */,
+				474924AC1CB6857000D08C66 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +382,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -408,7 +420,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -506,6 +518,7 @@
 				4751154A1C9BA41D004C8AC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4751154B1C9BA41D004C8AC4 /* Build configuration list for PBXNativeTarget "HayHayTests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +527,7 @@
 				4751154D1C9BA41D004C8AC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4751154E1C9BA41D004C8AC4 /* Build configuration list for PBXNativeTarget "HayHayUITests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +536,7 @@
 				475115501C9BA41D004C8AC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

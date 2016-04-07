@@ -31,9 +31,18 @@ class LoginController: UIViewController {
        
         //if username or password is empty throw error
         if(un.isEqualToString("") || pw.isEqualToString("")) {
-            let alert = UIAlertController(title: "Sign In Failed", message:"Please enter both username and password", preferredStyle: .Alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
-            self.presentViewController(alert, animated: true){}
+            
+            if #available (iOS 8.0, *) {
+                let alert = UIAlertController(title: "Sign In Failed", message:"Please enter both username and password", preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
+                self.presentViewController(alert, animated: true){}
+            } else {
+                let alert = UIAlertView();
+                alert.title = "Sign In Failed"
+                alert.message = "Please enter both username and password"
+                alert.addButtonWithTitle("OK")
+                alert.show();
+            }
         }
         
         //else process post request
@@ -54,10 +63,19 @@ class LoginController: UIViewController {
                 let vc = (self.storyboard?.instantiateViewControllerWithIdentifier("LoginController"))! as UIViewController
                 
                 if(error != nil) {
-                    let alert = UIAlertController(title: "Sign In Failed", message:"Connection Error", preferredStyle: .Alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
-                    self.presentViewController(alert, animated: true){}
-                    print(error!.localizedDescription)
+                    if #available(iOS 8.0, *) {
+                        let alert = UIAlertController(title: "Sign In Failed", message:"Connection Error", preferredStyle: .Alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
+                        self.presentViewController(alert, animated: true){}
+                        print(error!.localizedDescription)
+                    } else {
+                        let alert = UIAlertView();
+                        alert.title = "Sign In Failed"
+                        alert.message = "Connection Error"
+                        alert.addButtonWithTitle("OK")
+                        alert.show()
+                    }
+                    
                     return
                 }
                 var strData = NSString(data: data!, encoding: NSUTF8StringEncoding)
@@ -74,11 +92,20 @@ class LoginController: UIViewController {
                         
                         if (hasErrors != nil) {
                             dispatch_async(dispatch_get_main_queue()) {
-                                let alert = UIAlertController(title: "Sign In Failed", message:"Wrong username or password", preferredStyle: .Alert)
-                                print(self)
-                                alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
-                                //                            vc.presentViewController(alert, animated: true){}
-                                self.showViewController(alert, sender: self.signIn)
+                                if #available (iOS 8, *) {
+                                    let alert = UIAlertController(title: "Sign In Failed", message:"Wrong username or password", preferredStyle: .Alert)
+                                    
+                                    alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
+                                    //                            vc.presentViewController(alert, animated: true){}
+                                    self.showViewController(alert, sender: self.signIn)
+                                } else {
+                                    let alert = UIAlertView()
+                                    alert.title = "Sign In Failed"
+                                    alert.message = "Wrong username or password"
+                                    alert.addButtonWithTitle("OK")
+                                    alert.show()
+                                }
+                                
                             }
                             
                         } else {
