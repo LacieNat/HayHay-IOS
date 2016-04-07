@@ -12,6 +12,7 @@ class LoginController: UIViewController {
     
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var signIn: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,8 +49,9 @@ class LoginController: UIViewController {
             request.HTTPMethod = "POST"
             request.HTTPBody = try? NSJSONSerialization.dataWithJSONObject(params, options: [])
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-
-            var task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            
+            var ch:(NSData?, NSURLResponse?, NSError?)->Void = {(data, response, error) in
+                let vc = (self.storyboard?.instantiateViewControllerWithIdentifier("LoginController"))! as UIViewController
                 
                 if(error != nil) {
                     let alert = UIAlertController(title: "Sign In Failed", message:"Connection Error", preferredStyle: .Alert)
@@ -71,9 +73,19 @@ class LoginController: UIViewController {
                         var hasErrors = parseJSON!["err"] as? String
                         
                         if (hasErrors != nil) {
-                            let alert = UIAlertController(title: "Sign In Failed", message:"Wrong username or password", preferredStyle: .Alert)
-                            alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
-                            self.presentViewController(alert, animated: true){}
+                            dispatch_async(dispatch_get_main_queue()) {
+                                let alert = UIAlertController(title: "Sign In Failed", message:"Wrong username or password", preferredStyle: .Alert)
+                                print(self)
+                                alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
+                                //                            vc.presentViewController(alert, animated: true){}
+                                self.showViewController(alert, sender: self.signIn)
+                            }
+                            
+                        } else {
+                            dispatch_async(dispatch_get_main_queue()) {
+                                let vc = self.storyboard?.instantiateViewControllerWithIdentifier("TabBarController")
+                            self.presentViewController(vc!, animated: true, completion:nil)
+                            }
                         }
                     }
                         
@@ -83,7 +95,10 @@ class LoginController: UIViewController {
                         print("Error could not parse JSON: \(jsonStr)")
                     }
                 }
-            })
+
+            }
+
+            var task = session.dataTaskWithRequest(request, completionHandler: ch)
             
             task.resume();
             
